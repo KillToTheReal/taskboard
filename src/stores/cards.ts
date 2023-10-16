@@ -19,7 +19,8 @@ export const useCardsStore = defineStore('cards',{
         {id: 5, col_id: 2, header: 'Header', text:'lorem lorem'},
         {id: 6, col_id: 3, header: 'Header', text:'lorem lorem'},
         {id: 7, col_id: 2, header: 'Header', text:'lorem lorem'},
-        {id: 8, col_id: 2, header: 'Header', text:'lorem lorem'}]
+        {id: 8, col_id: 2, header: 'Header', text:'lorem lorem'}],
+        popup: false,
       }
     },
     getters: {
@@ -28,6 +29,10 @@ export const useCardsStore = defineStore('cards',{
         }
     },
     actions: {
+        togglePopup()
+        {
+            this.popup = !this.popup;
+        },
         changeCardColumn(cardId, colId)
         {
             const cardToUpdate = this.cards.find(card => card.id == cardId);

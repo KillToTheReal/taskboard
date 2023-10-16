@@ -1,10 +1,12 @@
 <template>
-    <div class="card draggable">
-        <div class="card--header"> <h2>{{header}}</h2> <button class="del_button" @click="cardsStore.deleteCard(id)"> del </button> </div>
-        <div class="card--text">
+    <div  class="card draggable">
+        <div class="card--header"> <h2>{{header}}</h2> <button class="del_button" @click="cardsStore.deleteCard(id), cardsStore.togglePopup.preventDe"> del </button> </div>
+        <div @click="cardsStore.togglePopup" class="card--text">
             {{ text }} {{ id }}
         </div>
     </div>
+
+
 </template>
 
 <script lang="ts">
@@ -15,7 +17,7 @@ export default{
     setup()
     {
         const cardsStore = useCardsStore();
-        return { cardsStore }
+        return { cardsStore } 
     },
     props:{
         id:{

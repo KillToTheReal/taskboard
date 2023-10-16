@@ -3,6 +3,7 @@
 
            <span class="column--header" draggable="true"> <h2> {{col_name}} </h2> </span>
             <span class="column--cards">
+            
                 <Card v-for="card in cards" @dragstart="onDragStart($event, card.id)" draggable="true" 
                 :key="card.id" :header="card.header" :text="card.text" :id="card.id"/>
             </span> 
@@ -17,6 +18,7 @@ export default{
     
     name: 'Column',
     components:{Card, CardForm},
+
     props:{
         id:{
             type: Number,

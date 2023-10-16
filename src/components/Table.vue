@@ -36,13 +36,13 @@ export default{
 
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
 .table{
     display: flex;
     flex-direction: row;
 //    border: 3px solid red;
-    width:90vw;
-    height: 90vh;
+    width:80vw;
+    height: 70vh;
     background-color: transparent;
     overflow: auto;
 
